@@ -1,0 +1,10 @@
+{
+    "require": {
+		"phing/phing" : "2.4.*",
+        "twitter/bootstrap": "v2.3.1",
+        "propel/propel1": "1.7.*",
+        "smarty/smarty": "~3",
+	"slim/slim": "2.2.0",
+	"slim/extras": "2.0.3"
+    }
+}

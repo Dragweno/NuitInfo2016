@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+    <propel>
+        <datasources default="librairie">
+            <datasource id="librairie">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;dbname=talentsharer</dsn>
+                    <user>root</user>
+                    <password>yeti</password>
+					<options>
+                        <option id="ATTR_PERSISTENT">false</option>
+                    </options>
+                    <attributes>
+                        <option id="ATTR_ERRMODE">PDO::ERRMODE_WARNING</option>
+                        <option id="ATTR_EMULATE_PREPARES">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="charset">utf8</setting>
+                    </settings>
+                </connection>
+            </datasource>
+        </datasources>
+    </propel>
+</config>

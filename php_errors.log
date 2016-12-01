@@ -1,0 +1,6 @@
+[12-Nov-2015 13:19:28 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/inscription.php on line 2
+[12-Nov-2015 13:19:28 UTC] PHP Stack trace:
+[12-Nov-2015 13:19:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/inscription.php:0
+[12-Nov-2015 13:26:03 UTC] PHP Fatal error:  Call to a member function display() on a non-object in /home/ubuntu/workspace/php/accueil.php on line 2
+[12-Nov-2015 13:26:03 UTC] PHP Stack trace:
+[12-Nov-2015 13:26:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/php/accueil.php:0

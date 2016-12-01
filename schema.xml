@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<database name="librairie" defaultIdMethod="native">
+
+    <table name="work" allowPkInsert="true">
+        <column name="id"  type="INTEGER" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="title" type="VARCHAR" required="true" description="Titre du livre" primaryString="true" />
+		<column name="description" required="false" type="VARCHAR" size="2048" description="description" />
+        <column name="height" required="true" type="INTEGER" description="height" />
+        <column name="width" required="true" type="INTEGER"  description="width" />
+        <column name="price" required="true" type="FLOAT" description="Work price" />
+        <column name="filename" required="true" type="VARCHAR" size="100" description="filename" />
+        <column name="filesize" required="true" type="FLOAT" description="filesize" />
+        <column name="stock" required="true" type="INTEGER" description="stock" />
+        <column name="rate" required="true" type="FLOAT" description="rate" />
+        <column name="date_post" required="true" type="DATE"  description="datepost" />
+		<column name="artist_id" required="true" type="INTEGER" description="artist_id" />
+		<column name="category_id" required="true" type="INTEGER" description="category_id" />
+		<foreign-key foreignTable="artist">
+		    <reference local="artist_id" foreign="id"/>
+		</foreign-key>
+		<foreign-key foreignTable="category">
+		    <reference local="category_id" foreign="id"/>
+		</foreign-key>
+    </table>
+    
+    <table name="user" allowPkInsert="true">
+        <column name="id" type="INTEGER" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="VARCHAR" size="255" required="true" description="name" />
+		<column name="firstname" required="true" type="VARCHAR" size="255" description="firstname" />
+		<column name="address" required="true" type="VARCHAR" size="1024" description="address" />
+		<column name="postal_code" required="true" type="VARCHAR" size="5" description="postalCode" />
+		<column name="city" required="true" type="VARCHAR" size="128" description="city" />
+		<column name="civility" required="true" type="VARCHAR" size="4" description="civility" />
+		<column name="email" required="true" type="VARCHAR" size="128" description="email" />
+		<column name="password" required="true" type="VARCHAR" size="32" description="Password" />
+		<column name="date_joined" required="true" type="DATE"  description="dateJoined" />
+		<column name="date_update" required="true" type="DATE"  description="dateUpdate" />
+		<column name="date_lastlog" required="true" type="DATE"  description="dateLastLog" />
+    </table>
+
+    <table name="artist" allowPkInsert="true">
+        <column name="id" type="INTEGER" primaryKey="true" autoIncrement="true" />
+        <column name="pseudo" type="VARCHAR" size="50 " description="pseudo" />
+        <column name="statut" type="VARCHAR" size="30" description="statut" />
+        <column name="description" type="VARCHAR" size="1024" description="the description" />        
+    </table>
+    
+    <table name="category" allowPkInsert="true">
+        <column name="id" type="INTEGER" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="VARCHAR" size="50" description="categoryname" />
+        <column name="description" type="VARCHAR" size="1024"  description="categorydescription" />
+    </table>
+    
+    <table name="history" allowPkInsert="true">
+        <column name="id" type="INTEGER" primaryKey="true" autoIncrement="true" />
+        <column name="total_price" type="FLOAT" description="orderTotalPrice" />
+        <column name="Nb_Work" type="INTEGER" description="orderNbWork" />
+        <column name="date_Payement" type="DATE" description="datePayement" />
+        <column name="user_id" required="true" type="INTEGER" description="user_id" />
+        <column name="work_id" required="true" size="255" type="INTEGER" description="work_id" />
+        <foreign-key foreignTable="user">
+		    <reference local="user_id" foreign="id"/>
+		</foreign-key>
+    </table>
+    
+    <table name="order_work_byid" allowPkInsert="true" isCrossRef="true">
+        <column name="history_id" type="INTEGER" primaryKey="true" />
+        <column name="work_id" type="INTEGER" primaryKey="true" />
+        <foreign-key foreignTable="history">
+            <reference local="history_id" foreign="id"/>
+        </foreign-key>
+        <foreign-key foreignTable="work">
+            <reference local="work_id" foreign="id"/>
+        </foreign-key>
+    </table>
+</database>
