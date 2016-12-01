@@ -100,7 +100,7 @@ CREATE TABLE history
     Nb_Work INTEGER COMMENT 'orderNbWork',
     date_Payement DATE COMMENT 'datePayement',
     user_id INTEGER NOT NULL COMMENT 'user_id',
-    work_id INTEGER NOT NULL COMMENT 'work_id',
+    work_id INTEGER(255) NOT NULL COMMENT 'work_id',
     PRIMARY KEY (id),
     INDEX history_FI_1 (user_id),
     CONSTRAINT history_FK_1

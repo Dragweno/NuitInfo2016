@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <config>
     <propel>
-        <datasources default="librairie">
-            <datasource id="librairie">
+        <datasources default="elsewhere">
+            <datasource id="elsewhere">
                 <adapter>mysql</adapter>
                 <connection>
-                    <dsn>mysql:host=167.114.244.157;dbname=elsewhere</dsn>
+                    <dsn>mysql:host=127.0.0.1;port=8889;dbname=elsewhere;</dsn>
                     <user>root</user>
-                    <password>Cnam2016!</password>
+                    <password>root</password>
 					<options>
                         <option id="ATTR_PERSISTENT">false</option>
                     </options>

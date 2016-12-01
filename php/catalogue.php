@@ -1,4 +1,5 @@
 <?php
+
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['category'])) {
         
         if(isset($_GET['pagenumber'])){

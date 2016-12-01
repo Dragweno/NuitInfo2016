@@ -18,7 +18,7 @@
 	$smarty->cache_dir = 'cache/';
 
 	// PROPEL
-	Propel::init ("build/conf/librairie-conf.php");
+	Propel::init ("build/conf/elsewhere-conf.php");
 	set_include_path (__DIR__. "/build/classes" . PATH_SEPARATOR . get_include_path ());
 	
 	// FRONT CONTROLEUR	
